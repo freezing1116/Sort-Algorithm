@@ -21,14 +21,33 @@ int partition(std::vector<int>& arr, int low, int high)
     return i;
 }
 
+int median_of_three(std::vector<int>& arr, int low, int high)
+{
+    int mid = low + (high - low) / 2;
+    if (arr[low] > arr[mid])
+        std::swap(arr[low], arr[mid]);
+    if (arr[low] > arr[high])
+        std::swap(arr[low], arr[high]);
+    if (arr[mid] > arr[high])
+        std::swap(arr[mid], arr[high]);
+    std::swap(arr[mid], arr[high]); // Move median to end
+    return arr[high];
+}
+
 void quick_sort(std::vector<int>& arr, int low, int high)
 {
-    if (low < high) {
-        // pi is the partition return index of pivot
-        int pi = partition(arr, low, high);
+    while (low < high) {
+        int pivot = median_of_three(arr, low, high);
+        int pi = partition(arr, low, high); // Can still reuse your partition
 
-        quick_sort(arr, low, pi - 1);
-        quick_sort(arr, pi + 1, high);
+        // Recurse into smaller half to limit stack depth
+        if (pi - low < high - pi) {
+            quick_sort(arr, low, pi - 1);
+            low = pi + 1;
+        } else {
+            quick_sort(arr, pi + 1, high);
+            high = pi - 1;
+        }
     }
 }
 
