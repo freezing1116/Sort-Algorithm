@@ -16,8 +16,9 @@ int getNextGap(int gap)
 }
 
 // Function to sort a[0..n-1] using Comb Sort
-void comb_sort(std::vector<int>& a, int n)
+void comb_sort(std::vector<int>& a)
 {
+    int n = a.size();
     // Initialize gap
     int gap = n;
 
@@ -70,7 +71,7 @@ int main(int argc, char* argv[])
     std::sort(sorted_list.begin(), sorted_list.end());
 
     // Comb sort
-    comb_sort(unsorted_list, unsorted_list.size());
+    comb_sort(unsorted_list);
 
     // Check if it's correctly sorted
     if (unsorted_list == sorted_list) {

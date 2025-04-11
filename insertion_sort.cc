@@ -30,13 +30,14 @@ int main(int argc, char* argv[])
 
     // Insertion sort
     int i = 1;
-    while (i < unsorted_list.size()) {
-        int j = i;
-        while (j > 0 && unsorted_list[j - 1] > unsorted_list[j]) {
-            std::swap(unsorted_list[j], unsorted_list[j - 1]);
+    for (int i = 1; i < unsorted_list.size(); i++) {
+        int key = unsorted_list[i];
+        int j = i - 1;
+        while (j >= 0 && unsorted_list[j] > key) {
+            unsorted_list[j + 1] = unsorted_list[j];
             j--;
         }
-        i++;
+        unsorted_list[j + 1] = key;
     }
 
     // Check if it's correctly sorted

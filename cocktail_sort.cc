@@ -5,8 +5,9 @@
 #include <vector>
 
 // Sorts array a[0..n-1] using Cocktail sort
-void cocktail_sort(std::vector<int>& a, int n)
+void cocktail_sort(std::vector<int>& a)
 {
+    int n = a.size();
     bool swapped = true;
     int start = 0;
     int end = n - 1;
@@ -73,7 +74,7 @@ int main(int argc, char* argv[])
     std::sort(sorted_list.begin(), sorted_list.end());
 
     // Cocktail sort
-    cocktail_sort(unsorted_list, unsorted_list.size());
+    cocktail_sort(unsorted_list);
 
     // Check if it's correctly sorted
     if (unsorted_list == sorted_list) {

@@ -9,10 +9,7 @@
 // the two pointers
 void swapValue(int* a, int* b)
 {
-    int* temp = a;
-    a = b;
-    b = temp;
-    return;
+    std::swap(*a, *b);
 }
 
 /* Function to sort an array using insertion sort*/
@@ -123,7 +120,7 @@ void IntrosortUtil(std::vector<int>& arr, int* begin,
 /* Implementation of introsort*/
 void intro_sort(std::vector<int>& arr, int* begin, int* end)
 {
-    int depthLimit = 2 * std::log(end - begin);
+    int depthLimit = 2 * std::log2(end - begin);
 
     // Perform a recursive Introsort
     IntrosortUtil(arr, begin, end, depthLimit);
