@@ -38,19 +38,18 @@ for algo in "${algorithms[@]}"; do
             continue
         fi
 
-        csv="results/${algo}_${dir}.csv"
-        echo "testcase,time(ms)" > "$csv"
+        for input in "$dir"/*.txt; do
+            base_name=$(basename "$input" .txt)               # test_asce_1K
+            csv="results/${algo}_${base_name}.csv"            # results/library_sort_test_asce_1K.csv
 
-        for input in $dir/*.txt; do
-            name=$(basename "$input" .txt)
+            echo "testcase,time(ms)" > "$csv"
             echo "▶️  $algo on $input"
 
-            # Using Bash's built-in time command with TIMEFORMAT
             TIMEFORMAT="%R"
             time_in_seconds=$( { time ./$algo "$input" > /dev/null; } 2>&1 )
             time_in_ms=$(echo "$time_in_seconds * 1000" | bc)
-            
-            echo "$name,$time_in_ms" >> "$csv"
+
+            echo "$base_name,$time_in_ms" >> "$csv"
         done
     done
 done
