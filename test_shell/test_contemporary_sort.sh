@@ -14,8 +14,7 @@ algorithms=(
     intro_sort
     comb_sort
     cocktail_sort
-    libray_sort
-    
+    library_sort
 )
 
 testcase_dirs=(
