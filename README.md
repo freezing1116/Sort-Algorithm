@@ -9,7 +9,7 @@ This repository contains various classic sorting methods with clear code structu
 
 - ✅ Directly implemented from scratch
 - ✅ Includes testing shell scripts for each algorithm
-- ✅ Simple and clean C codebase
+- ✅ Simple and clean C++ codebase
 - ✅ Useful for educational purposes, practice, and interview prep
 
 ---
@@ -38,6 +38,12 @@ Each implementation focuses on:
 - Console-based testing output
 
 ---
+## Download & Run
+```bash
+git clone https://github.com/freezing1116/Sort-Algorithm
+cd Sort-Algorithm
+make
+```
 
 ## How to Run Tests
 
