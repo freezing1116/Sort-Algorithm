@@ -39,6 +39,7 @@ Each implementation focuses on:
 
 ---
 ## Download & Run
+Make sure you have a C++ compiler (clang++ recommended) and basic shell access.  
 ```bash
 git clone https://github.com/freezing1116/Sort-Algorithm
 cd Sort-Algorithm
@@ -46,8 +47,6 @@ make
 ```
 
 ## How to Run Tests
-
-Make sure you have a C compiler (clang recommended) and basic shell access.  
 Go to the `test_shell/` directory and run:
 
 ```bash
