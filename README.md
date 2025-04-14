@@ -54,4 +54,6 @@ Go to the `test_shell/` directory and run:
 ./test_bubble_sort.sh
 ./test_quick_sort.sh
 # etc...
+```
 
+If the run has perfectly finished, you can now see reseults directory in which the results of test cases
